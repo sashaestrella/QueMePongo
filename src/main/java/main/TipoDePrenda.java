@@ -1,10 +1,4 @@
 package main;
-/*
-enum Marca {
-    CONVERSE,
-    NIKE,
-    ADIDAS
-}*/
 
 public class TipoDePrenda {
     String tipoDePrenda;
@@ -19,24 +13,3 @@ public class TipoDePrenda {
         return this.categoria == categoria;
     }
 }
-
-
-/*
-class Zapatillas extends TipoDePrenda {
-    Marca marca;
-
-    public Zapatillas(String tipoDePrenda, Marca marca, Categoria categoria) {
-        super(tipoDePrenda, categoria);
-        this.marca = marca;
-    }
-}
-
-class Pantalon extends  TipoDePrenda {
-    String quienRegalo;
-
-    public Pantalon(String tipoDePrenda, String regaloDe, Categoria categoria) {
-        super(tipoDePrenda, categoria);
-        this.quienRegalo = regaloDe;
-    }
-}
-*/
