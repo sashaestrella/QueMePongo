@@ -1,15 +1,10 @@
 package main;
-
-enum Mangas {
-    CORTAS,
-    LARGAS
-}
-
+/*
 enum Marca {
     CONVERSE,
     NIKE,
     ADIDAS
-}
+}*/
 
 public class TipoDePrenda {
     String tipoDePrenda;
@@ -25,15 +20,8 @@ public class TipoDePrenda {
     }
 }
 
-class Camisa extends TipoDePrenda {
-    Mangas mangas;
 
-    public Camisa(String tipoDePrenda, Mangas mangas, Categoria categoria) {
-        super(tipoDePrenda, categoria);
-        this.mangas = mangas;
-    }
-}
-
+/*
 class Zapatillas extends TipoDePrenda {
     Marca marca;
 
@@ -51,4 +39,4 @@ class Pantalon extends  TipoDePrenda {
         this.quienRegalo = regaloDe;
     }
 }
-
+*/

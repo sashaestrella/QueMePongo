@@ -1,12 +1,8 @@
 package test;
 
+import main.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import main.Categoria;
-import main.Prenda;
-import main.TipoDePrenda;
-import main.Color;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -68,5 +64,4 @@ public class QueMePongoTest {
     public void prendaConColorSecundario() throws Exception{
         unaPrenda = new Prenda(jean,parteInferior, "Jean", rojo, naranja);
     }
-
 }
