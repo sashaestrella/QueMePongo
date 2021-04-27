@@ -7,18 +7,22 @@ public class PrendaBorrador {
     Material material;
     Trama trama;
 
+    public Trama getTrama(){
+        return this.trama;
+    }
+
     public Prenda prendaBorrador() {
         Prenda prenda = new Prenda(tipo, material, color, colorSecundario, trama);
         return prenda;
     }
-
-    public void setTipo(TipoPrenda tipo) { this.tipo = tipo;}
 
     private void validarTipo(){
         if(tipo == null) {
             throw new RuntimeException("Primero especifique el tipo por favor.");
         }
     }
+
+    public void setTipo(TipoPrenda tipo) { this.tipo = tipo;}
 
     public void setColor(Color color) {
         validarTipo();
@@ -37,6 +41,10 @@ public class PrendaBorrador {
 
     public void setTrama(Trama trama) {
         validarTipo();
-        this.trama = trama;
+        if(trama == null){
+            this.trama = Trama.LISA;
+        }else{
+            this.trama = trama;
+        }
     }
 }
