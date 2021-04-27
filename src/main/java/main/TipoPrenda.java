@@ -6,14 +6,9 @@ public enum TipoPrenda {
     ZAPATOS(Categoria.CALZADO),
     PANTALON_VESTIR(Categoria.PARTE_INFERIOR),
     CHOMBA(Categoria.PARTE_SUPERIOR),
-    ZAPATILLAS(Categoria.CALZADO);
-
-    private Categoria categoria;
+    ZAPATILLAS(Categoria.CALZADO),
+    REMERA(Categoria.PARTE_SUPERIOR);
 
     TipoPrenda(Categoria categoria) {
-    }
-
-    Categoria TipoPrenda(Categoria categoria) {
-        return this.categoria = categoria;
     }
 }
