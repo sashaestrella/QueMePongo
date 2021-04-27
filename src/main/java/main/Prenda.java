@@ -1,48 +1,41 @@
 package main;
 
-import org.apache.commons.lang3.Validate;
+import org.apache.maven.surefire.shade.org.apache.commons.lang3.Validate;
 
 public class Prenda {
-    TipoDePrenda tipo;
+    TipoPrenda tipo;
     Categoria categoria;
-    String material;
+    Material material;
     Color color;
     Color colorSecundario;
+    Trama trama;
 
     //constructor
-    public Prenda(TipoDePrenda tipo, Categoria categoria, String material, Color color) throws Exception{
+    public Prenda(TipoPrenda tipo, Material material, Color color, Trama trama, Categoria categoria) {
+        Validate.notNull(tipo,"El campo 'tipo' no puede ir vacio");
+        Validate.notNull(material,"El campo 'material' no puede ir vacio");
+        Validate.notNull(color,"El campo 'color' no puede ir vacio");
+
         this.tipo = tipo;
         this.categoria = categoria;
         this.material = material;
         this.color = color;
-
-        if(!tipo.categoria(categoria)) {
-            throw new Exception("El tipo NO coincide con la categoría.");
+        if(trama == null){
+            this.trama = Trama.LISA;
+        }else{
+            this.trama = trama;
         }
-
-        Validate.notNull(categoria,"El campo 'categoria' no puede ir vacio");
-        Validate.notNull(tipo,"El campo 'tipo' no puede ir vacio");
-        Validate.notNull(material,"El campo 'material' no puede ir vacio");
-        Validate.notNull(color,"El campo 'color' no puede ir vacio");
     }
 
     //constructor con color secundario
-    public Prenda(TipoDePrenda tipo, Categoria categoria, String material, Color color, Color colorSecundario) throws Exception{
-        this(tipo, categoria, material, color);
+    public Prenda(TipoPrenda tipo, Material material, Color color, Color colorSecundario, Trama trama, Categoria categoria) throws Exception{
+        this(tipo, material, color, trama, categoria);
         this.colorSecundario = colorSecundario;
-
-        if(!tipo.categoria(categoria)) {
-            throw new Exception("El tipo NO coincide con la categoría.");
-        }
-
-        Validate.notNull(categoria,"El campo 'categoria' no puede ir vacio");
-        Validate.notNull(tipo,"El campo 'tipo' no puede ir vacio");
-        Validate.notNull(material,"El campo 'material' no puede ir vacio");
-        Validate.notNull(color,"El campo 'color' no puede ir vacio");
     }
 
-    public TipoDePrenda getPrenda(){ return this.tipo; }
+    public TipoPrenda getPrenda(){ return this.tipo; }
     public Categoria getCategoria(){ return this.categoria; }
+    public Trama getTrama() { return this.trama;}
    /* public String getMaterial(){ return this.material; }
     public String getColor(){ return this.color; }*/
 

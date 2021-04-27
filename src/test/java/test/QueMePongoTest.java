@@ -1,11 +1,41 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+
+class PrendaTest {
+    @Test
+    public void laTramaDeEstaCamisaEsLisaPorDefecto() {
+        assertEquals(camisa().getTrama().toString(), "LISA");
+    }
+
+    @Test
+    public void laTramaDeEstePantalonQuieroQueSeaRayado() {
+        assertEquals(pantalon().getTrama().toString(), "RAYADA");
+    }
+
+    @Test
+    public void elTipoDeLaPrendaNoPuedeIrNulo() {
+        assertThrows(Exception.class, (Executable) new Prenda(null,Material.ALGODON,Color.GRIS,Trama.LISA,Categoria.PARTE_SUPERIOR));
+    }
+
+    private Prenda camisa() {
+        Prenda camisa = new Prenda(TipoPrenda.CAMISA,Material.ALGODON,Color.BLANCO,null,Categoria.PARTE_SUPERIOR);
+        return camisa;
+    }
+
+    private Prenda pantalon() {
+        Prenda pantalon = new Prenda(TipoPrenda.PANTALON,Material.ALGODON,Color.BLANCO,Trama.RAYADA,Categoria.PARTE_SUPERIOR);
+        return pantalon;
+    }
+}
+/*
 public class QueMePongoTest {
     Prenda unaPrenda;
     static Categoria parteSuperior;
@@ -64,4 +94,9 @@ public class QueMePongoTest {
     public void prendaConColorSecundario() throws Exception{
         unaPrenda = new Prenda(jean,parteInferior, "Jean", rojo, naranja);
     }
-}
+
+    @Test
+    public void prendaConColorSecundarioSinTipo() throws Exception{
+        unaPrenda = new Prenda(null,parteInferior, "Jean", rojo, naranja);
+    }
+}*/

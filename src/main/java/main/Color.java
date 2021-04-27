@@ -8,7 +8,10 @@ public enum Color {
     ROJO("Rojo"),
     AMARILLO("Amarillo"),
     VERDE("Verde"),
-    NARANJA("Naranja");
+    NARANJA("Naranja"),
+    GRIS("Gris"),
+    BLANCO("Blanco"),
+    NEGRO("Negro");
 
     private String nombreColor;
 
@@ -16,7 +19,7 @@ public enum Color {
         nombreColor = nombre;
     }
 
-    public List<Color> coloresPrimarios(){
+    static List<Color> coloresPrimarios(){
         List<Color> colores = new ArrayList<>();
         colores.add(AZUL);
         colores.add(ROJO);

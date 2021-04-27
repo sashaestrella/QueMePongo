@@ -1,17 +1,13 @@
 package main;
 
-import java.util.List;
-
-public class Atuendo {
+public class Uniforme {
     Prenda prendaSuperior;
     Prenda prendaInferior;
     Prenda calzado;
-    List<Prenda> accesorios;
 
-    public Atuendo(Prenda prendaSuperior, Prenda prendaInferior, Prenda calzado, List<Prenda> accesorios){
+    public Uniforme(Prenda prendaSuperior, Prenda prendaInferior, Prenda calzado){
         this.prendaSuperior = prendaSuperior;
         this.prendaInferior = prendaInferior;
         this.calzado = calzado;
-        this.accesorios = accesorios;
     }
 }
