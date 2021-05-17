@@ -8,14 +8,17 @@ public class Prenda {
     Color color;
     Color colorSecundario;
     Trama trama;
+    int nivelDeAbrigo;
 
     //constructor
-    public Prenda(TipoPrenda tipo, Material material, Color color, Trama trama) {
+    public Prenda(TipoPrenda tipo, int nivelDeAbrigo,Material material, Color color, Trama trama) {
         Validate.notNull(tipo,"El campo 'tipo' no puede ir vacio");
+        Validate.notNull(nivelDeAbrigo,"El campo 'nivel de abrigo' no puede ir vacio");
         Validate.notNull(material,"El campo 'material' no puede ir vacio");
         Validate.notNull(color,"El campo 'color' no puede ir vacio");
 
         this.tipo = tipo;
+        this.nivelDeAbrigo = nivelDeAbrigo;
         this.material = material;
         this.color = color;
         if(trama == null){
@@ -26,8 +29,8 @@ public class Prenda {
     }
 
     //constructor con color secundario
-    public Prenda(TipoPrenda tipo, Material material, Color color, Color colorSecundario, Trama trama) {
-        this(tipo, material, color, trama);
+    public Prenda(TipoPrenda tipo, int nivelDeAbrigo, Material material, Color color, Color colorSecundario, Trama trama) {
+        this(tipo, nivelDeAbrigo, material, color, trama);
         this.colorSecundario = colorSecundario;
     }
 
