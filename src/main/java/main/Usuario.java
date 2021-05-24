@@ -1,16 +1,26 @@
 package main;
 
+import main.Sugerencias.GestorDeSugerencias;
+import main.Sugerencias.Sugerencia;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
-    public List<Prenda> prendas;
+    private List<Guardarropa> guardarropas;
+    private GuardarropaCompartido guardarropaCompartido;
 
-    public Usuario(List<Prenda> prendas){
-        this.prendas = prendas;
+    public Usuario(List<Guardarropa> guardarropas){
+        this.guardarropas = guardarropas;
     }
 
-    public void agregarPrenda(Prenda prenda){
-        prendas.add(prenda);
+    public void agregarGuardarropa(Guardarropa nuevoGuardarropa) {
+        this.guardarropas.add(nuevoGuardarropa);
+    }
+
+    public void getSugerencia(Sugerencia unaSugerencia) {
+        GestorDeSugerencias.getInstance().mostrarAtuendos(
+                GestorDeSugerencias.getInstance().getSugerencia(unaSugerencia)
+        );
     }
 }
