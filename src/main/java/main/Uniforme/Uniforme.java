@@ -1,4 +1,6 @@
-package main;
+package main.Uniforme;
+
+import main.Prenda;
 
 public class Uniforme {
     Prenda prendaSuperior;

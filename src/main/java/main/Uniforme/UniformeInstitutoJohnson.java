@@ -1,12 +1,34 @@
-package main;
+package main.Uniforme;
 
-public class UniformeInstitutoJohnson implements CrearUniforme {
-    public Uniforme uniforme(){
-        Prenda prendaSuperior = new Prenda(TipoPrenda.CAMISA, Material.ALGODON, Color.BLANCO, null);
-        Prenda prendaInferior = new Prenda(TipoPrenda.PANTALON_VESTIR, Material.ACETATO, Color.NEGRO, null);
-        Prenda calzado = new Prenda(TipoPrenda.ZAPATOS, Material.CUERO, Color.NEGRO, null);
-        Uniforme uniforme = new Uniforme(prendaSuperior, prendaInferior, calzado);
+import main.Material;
+import main.Prenda;
+import main.PrendaBorrador;
+import main.TipoPrenda;
 
-        return uniforme;
+import java.awt.*;
+
+public class UniformeInstitutoJohnson extends CrearUniforme {
+    @Override
+    protected Prenda prendaSuperior(){
+        PrendaBorrador borrador = this.getBorrador(TipoPrenda.CAMISA);
+        borrador.setMaterial(Material.ALGODON);
+        borrador.setColor(Color.WHITE);
+        return borrador.prenda();
+    }
+
+    @Override
+    protected Prenda prendaInferior(){
+        PrendaBorrador borrador = this.getBorrador(TipoPrenda.PANTALON_VESTIR);
+        borrador.setMaterial(Material.ACETATO);
+        borrador.setColor(Color.BLACK);
+        return borrador.prenda();
+    }
+
+    @Override
+    protected Prenda calzado(){
+        PrendaBorrador borrador = this.getBorrador(TipoPrenda.ZAPATOS);
+        borrador.setMaterial(Material.CUERO);
+        borrador.setColor(Color.BLACK);
+        return borrador.prenda();
     }
 }
