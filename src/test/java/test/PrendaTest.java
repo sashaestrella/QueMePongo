@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -24,21 +26,21 @@ class PrendaTest {
         parteInferior = Categoria.PARTE_INFERIOR;
         remera = TipoPrenda.REMERA;
         jean = TipoPrenda.PANTALON;
-        rojo = Color.ROJO;
-        naranja = Color.NARANJA;
+        rojo = Color.RED;
+        naranja = Color.ORANGE;
     }
 
     @Test
     public void prendaSinTipo() throws Exception{
         assertThrows(Exception.class, ()->{
-            unaPrenda = new Prenda(null, Material.ALGODON,Color.BLANCO,Trama.LISA);
+            unaPrenda = new Prenda(null, Material.ALGODON,Color.WHITE,Trama.LISA);
         });
     }
 
     @Test
     public void prendaSinMaterial() throws Exception{
         assertThrows(Exception.class, ()->{
-            unaPrenda = new Prenda(TipoPrenda.REMERA,null,Color.ROJO,Trama.RAYADA);
+            unaPrenda = new Prenda(TipoPrenda.REMERA,null,Color.RED,Trama.RAYADA);
         });
     }
 
@@ -51,7 +53,7 @@ class PrendaTest {
 
     @Test
     public void prendaConColorSecundario() throws Exception{
-        unaPrenda = new Prenda(TipoPrenda.REMERA,Material.ALGODON, Color.NARANJA,Color.ROJO,Trama.CUADROS);
+        unaPrenda = new Prenda(TipoPrenda.REMERA,Material.ALGODON, Color.ORANGE,Color.RED,Trama.CUADROS);
     }
 
     @Test
@@ -66,12 +68,12 @@ class PrendaTest {
 
 
     private Prenda camisa() {
-        Prenda camisa = new Prenda(TipoPrenda.CAMISA,Material.ALGODON,Color.BLANCO,null);
+        Prenda camisa = new Prenda(TipoPrenda.CAMISA,Material.ALGODON,Color.WHITE,null);
         return camisa;
     }
 
     private Prenda pantalon() {
-        Prenda pantalon = new Prenda(TipoPrenda.PANTALON,Material.ALGODON,Color.BLANCO,Trama.RAYADA);
+        Prenda pantalon = new Prenda(TipoPrenda.PANTALON,Material.ALGODON,Color.WHITE,Trama.RAYADA);
         return pantalon;
     }
 }

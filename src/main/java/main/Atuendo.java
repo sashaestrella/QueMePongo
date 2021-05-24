@@ -16,6 +16,10 @@ public class Atuendo {
         this.rechazado = false;
     }
 
+    public Prenda getPrendaSuperior() {
+        return this.prendaSuperior;
+    }
+
     public void setGuardarropa(Guardarropa guardarropa) {
         this.guardarropaAsociado = guardarropa;
     }

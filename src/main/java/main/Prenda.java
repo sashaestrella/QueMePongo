@@ -35,6 +35,10 @@ public class Prenda {
 
     public Trama getTrama() { return this.trama;}
 
+    public TipoPrenda getTipo() {
+        return tipo;
+    }
+
     public boolean esDeTipoPrenda(TipoPrenda tipo) {
         return this.tipo == tipo;
     }

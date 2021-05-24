@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -7,6 +8,12 @@ public class Guardarropa {
     private List<Prenda> prendas;
     private List<Atuendo> atuendosAceptados;
     private List<Atuendo> atuendosRechazados;
+
+    public Guardarropa() {
+        this.prendas = new ArrayList<Prenda>();
+        this.atuendosAceptados = new ArrayList<Atuendo>();
+        this.atuendosRechazados = new ArrayList<Atuendo>();
+    }
 
     public List<Prenda> getPrendas() {
         return prendas;
@@ -28,7 +35,11 @@ public class Guardarropa {
         this.prendas.add(nuevaPrenda);
     }
 
-    private List<Prenda> filtrarPorTipoDePrenda(TipoPrenda tipo) {
+    public void agregarPrendas(List<Prenda> prendas) {
+        this.prendas.addAll(prendas);
+    }
+
+    public List<Prenda> filtrarPorTipoDePrenda(TipoPrenda tipo) {
         return this.getPrendas().stream().filter(prenda -> prenda.esDeTipoPrenda(tipo)).collect(Collectors.toList());
     }
 

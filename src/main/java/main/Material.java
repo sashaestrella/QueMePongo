@@ -5,5 +5,6 @@ public enum Material {
     ACETATO,
     CUERO,
     GOMA,
-    PIQUE
+    PIQUE,
+    PLASTICO
 }

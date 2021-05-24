@@ -7,7 +7,8 @@ public enum TipoPrenda {
     PANTALON_VESTIR(Categoria.PARTE_INFERIOR),
     CHOMBA(Categoria.PARTE_SUPERIOR),
     ZAPATILLAS(Categoria.CALZADO),
-    REMERA(Categoria.PARTE_SUPERIOR);
+    REMERA(Categoria.PARTE_SUPERIOR),
+    ACCESORIO(Categoria.PARTE_SUPERIOR);
 
     TipoPrenda(Categoria categoria) {
     }

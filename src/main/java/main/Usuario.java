@@ -2,16 +2,15 @@ package main;
 
 import main.Sugerencias.GestorDeSugerencias;
 import main.Sugerencias.Sugerencia;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
     private List<Guardarropa> guardarropas;
     private GuardarropaCompartido guardarropaCompartido;
 
-    public Usuario(List<Guardarropa> guardarropas){
+    public Usuario(List<Guardarropa> guardarropas, GuardarropaCompartido guardarropaCompartido){
         this.guardarropas = guardarropas;
+        this.guardarropaCompartido = guardarropaCompartido;
     }
 
     public void agregarGuardarropa(Guardarropa nuevoGuardarropa) {

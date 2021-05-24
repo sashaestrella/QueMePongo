@@ -3,8 +3,9 @@ package test;
 import main.*;
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PrendaBorradorTest {
     @Test
@@ -12,27 +13,10 @@ class PrendaBorradorTest {
         assertEquals(prenda().getTrama().toString(), "LISA");
     }
 
-    @Test
-    public void estaPrendaNoSeteaPrimeroElTipo() {
-        assertThrows(Exception.class, ()->{
-            PrendaBorrador unaPrenda = prendaMalSeteada();
-        });
-    }
-
     private PrendaBorrador prenda() {
-        PrendaBorrador prenda = new PrendaBorrador();
-        prenda.setTipo(TipoPrenda.CAMISA);
+        PrendaBorrador prenda = new PrendaBorrador(TipoPrenda.CAMISA);
         prenda.setMaterial(Material.ALGODON);
-        prenda.setColor(Color.NEGRO);
-        prenda.setTrama(null);
-        return prenda;
-    }
-
-    private PrendaBorrador prendaMalSeteada() {
-        PrendaBorrador prenda = new PrendaBorrador();
-        prenda.setMaterial(Material.ALGODON);
-        prenda.setColor(Color.NEGRO);
-        prenda.setTipo(TipoPrenda.CAMISA);
+        prenda.setColor(Color.BLACK);
         prenda.setTrama(null);
         return prenda;
     }
